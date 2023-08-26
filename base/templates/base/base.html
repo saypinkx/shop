@@ -2,7 +2,9 @@
 <html lang="en">
 {% load static %}
 <head>
+    {% block css %}
     <link rel="stylesheet" href="{% static 'base/base.css' %}">
+    {% endblock css %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>others</title>
@@ -15,7 +17,7 @@
     <ul>
       <li><a href="http://">Home</a></li>
       <li><a href="{% url 'login' %}">Sign in</a></li>
-      <li><a href="{% url 'registration' %}">Sigin up</a></li>
+      <li><a href="{% url 'registration' %}">Sign up</a></li>
       <li><a class="dropdown-arrow" href="http://">Products</a>
         <ul class="sub-menus">
           <li><a href="http://">Products 1</a></li>
@@ -35,7 +37,7 @@
       <li><a href="http://">Contact Us</a></li>
     </ul>
   </nav>
-
+{% block content %}
   <div class="wrapper">
 	<svg>
 		<text x="50%" y="50%" dy=".35em" text-anchor="middle">
@@ -43,6 +45,7 @@
 		</text>
 	</svg>
 </div>
+
 <div class="description">
     <div class="product T-shirts"> 
         <div class="text">T-shirts</div>
@@ -57,5 +60,6 @@
         <div class="text">Trousers</div>
     </div>
 </div>
+{% endblock content %}
 </body>
 </html>
