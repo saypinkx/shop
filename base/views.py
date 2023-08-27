@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
-from .forms import RegistrationForm
-
+from django.http import HttpResponseRedirect
+from .forms import SignUpForm
 
 # Create your views here.
 
@@ -18,5 +18,17 @@ class LoginView(View):
 
 class RegistrationView(View):
     def get(self, request):
-        form = RegistrationForm()
+        form = SignUpForm()
         return render(request, 'base/registration.html', context={'form': form})
+
+    def post(self, request):
+        form = SignUpForm(request.POST)
+
+        if form.is_valid():
+
+            return HttpResponseRedirect('/registration')
+        else:
+            return render(request, 'base/registration.html', context={"form": form})
+
+
+
