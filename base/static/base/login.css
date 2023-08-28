@@ -156,9 +156,16 @@ ul{
 .errorlist{
     color:white;
     margin-top: 1%;
-    margin-left: 8%;
-    font-family: monospace;
+    margin-left: 10%;
+	margin-right: 10%;
     font-size: 15px;
-    list-style: none;
-    
+    list-style: none; 
+	
+}
+.message{
+	color: white;
+	margin: 8% auto;
+	width: 100%;
+	text-align: center;
+
 }
