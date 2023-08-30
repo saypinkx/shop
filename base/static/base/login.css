@@ -169,3 +169,8 @@ ul{
 	text-align: center;
 
 }
+
+.secret{
+	display: none;
+	line-height: NaNpx;
+}
