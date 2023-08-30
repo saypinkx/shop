@@ -136,6 +136,7 @@ svg text {
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
+	cursor: pointer;
 }
 .product {
     margin-top: 5%;
@@ -149,8 +150,9 @@ svg text {
     height: 35%;
     width: 20%;
     max-height: 300px;
+	cursor: pointer;
 
-    
+
     border-radius: 10%;
     border-color:#A00A68;
     border-style: solid;
@@ -161,6 +163,7 @@ svg text {
     font-family: monospace;
     color: black;
     font-size: 300%;
+	cursor: pointer;
 }
 
 .T-shirts {

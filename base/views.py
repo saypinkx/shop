@@ -22,6 +22,14 @@ class BaseView(View):
 class LoginView(View):
     def get(self, request):
         return render(request, 'base/login.html')
+    def post(self, request):
+        data = request.POST
+        user = authenticate(username=data['email'], password=data['password'])
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect('/')
+        else:
+            return render(request, 'base/login.html', context ={'message': 'Incorrect email or password'})
 
 
 class RegistrationView(View):
