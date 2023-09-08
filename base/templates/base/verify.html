@@ -18,8 +18,10 @@
         {% csrf_token %}
 
         <label for="chk" aria-hidden="true">Enter the code</label>
+        <div class="secret"><input type="text" name="stage" value="verify"></div>
         <input type="text" name="user_code" placeholder="Code" required="">
         <div class="message">{{message}}</div>
+        <div class="secret"><input type="text" name="username" value="{{username}}"></div>
 
 
         <button>Send</button>

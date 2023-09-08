@@ -40,7 +40,7 @@ class RegistrationView(View):
         return render(request, 'base/registration.html', context={'form': form})
 
     def post(self, request):
-        if not self.is_verify(request):
+        if request.POST['stage'] == 'registration':
             form = SignUpForm(request.POST)
             if form.is_valid():
                 data = form.cleaned_data
@@ -50,13 +50,14 @@ class RegistrationView(View):
                 else:
                     code = self.send_code(data['email'])
                     self.create_unregistered_user(data, code)
-                    return render(request, 'base/verify.html')
+                    return render(request, 'base/verify.html', context={'username': data['email']})
             else:
                 return render(request, 'base/registration.html', context={"form": form})
         else:
             code = request.POST['user_code']
+            username = request.POST['username']
             try:
-                unregistered_user = VerifyModel.objects.get(code=code)
+                unregistered_user = VerifyModel.objects.get(username=username, code=code)
             except:
                 return render(request, 'base/verify.html', context={'message': 'Invalid code'})
             else:
@@ -81,10 +82,6 @@ class RegistrationView(View):
         )
         return code
 
-    def is_verify(self, request):
-        if len(request.POST) < 5:
-            return True
-        return False
 
     def create_unregistered_user(self, data, code):
         values_for_update = {"first_name": data['name'], 'last_name': data['surname'], 'password': data['password'],
