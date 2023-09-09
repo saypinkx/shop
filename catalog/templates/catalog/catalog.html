@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "base/base.html" %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'base/login.css' %}">
+    <link rel="stylesheet" href="{% static 'catalog/catalog.css' %}">
+    {% endblock css %}
+</head>
+<body>
+{% block content %}
+<br>
+<div class="catalog">
+    <div class="item">
+        <img src="{{ one.url }}" alt="" >
+        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti nemo, odio sapiente delectus vel accusamus maxime corrupti necessitatibus, unde laboriosam ab a eius eveniet incidunt corporis consectetur aperiam repellendus adipisci!</div>
+    </div>
+    <div class="item">
+        <img src="{{ one.url }}" alt="" >
+    </div>
+</div>
+
+{% endblock content %}
+</body>
+</html>

@@ -32,7 +32,11 @@ svg text {
 	}
 }
 
-.wrapper {background-color: #000000};
+.wrapper {
+    background-color: #000000;
+    cursor: pointer;
+
+}
 
 #menu {
 	background: #000000;
@@ -77,7 +81,7 @@ svg text {
 	height: <ya-tr-span data-index="31-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="45" data-translation="45" data-ch="0" data-type="trSpan">45</ya-tr-span>px;
 	width: 100%;
 	opacity: 0;
-	cursor: pointer
+	cursor: pointer;
 }
 #menu label {
 	display: none;
@@ -156,6 +160,7 @@ svg text {
     border-radius: 10%;
     border-color:#A00A68;
     border-style: solid;
+    text-decoration: none;
 }
 .text {
     margin: auto;
@@ -177,4 +182,7 @@ svg text {
 }
 .Trousers {
     background-image: url(./imgs/trousers.png);
+}
+a {
+    text-decoration: none;
 }

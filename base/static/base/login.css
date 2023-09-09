@@ -1,3 +1,43 @@
+html {
+background-color: #000000;
+color: white;
+height: 100%;
+}
+body {
+    height: 100%;
+}
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+svg {
+	font-family: "Russo One", sans-serif;
+	width: 100%; height: 100%;
+    font-size: 100px;
+}
+svg text {
+	animation: stroke 10s infinite alternate;
+	stroke-width: 2;
+	stroke: #A00A68;
+	font-size: <ya-tr-span data-index="76-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="180" data-translation="180" data-ch="0" data-type="trSpan">180</ya-tr-span>px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(204,3,177,0); stroke: rgba(160,10,104,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(204,3,177,0); stroke: rgba(160,10,104,1); }
+	80%  {fill: rgba(204,3,177,0); stroke: rgba(160,10,104,1); stroke-width: 3; }
+	100% {
+		fill: rgba(204,3,177,1); stroke: rgba(160,10,104,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
+.wrapper {
+    background-color: #000000;
+    cursor: pointer;
+
+}
+
 #menu {
 	background: #000000;
 	color: #FFF;
@@ -41,7 +81,7 @@
 	height: <ya-tr-span data-index="31-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="45" data-translation="45" data-ch="0" data-type="trSpan">45</ya-tr-span>px;
 	width: 100%;
 	opacity: 0;
-	cursor: pointer
+	cursor: pointer;
 }
 #menu label {
 	display: none;

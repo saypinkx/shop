@@ -47,18 +47,19 @@
 </div>
 
 <div class="description">
-    <div class="product T-shirts"> 
-        <div class="text">T-shirts</div>
-    </div>
-    <div class="product Hodies"> 
-        <div class="text">Hodies</div>
-    </div>
-    <div class="product Tops"> 
-        <div class="text">Tops</div>
-    </div>
-    <div class="product Trousers"> 
-        <div class="text">Trousers</div>
-    </div>
+     <a class="product T-shirts" href="{% url 'catalog' 't-shirts' %}">
+             <div class="text">T-shirts</div>
+    </a>
+    <a class="product Hodies" href="{% url 'catalog' 'hodies' %}">
+             <div class="text">Hodies</div>
+    </a>
+
+     <a class="product Tops" href="{% url 'catalog' 'tops' %}">
+             <div class="text">Tops</div>
+    </a>
+     <a class="product Trousers" href="{% url 'catalog' 'trousers' %}">
+             <div class="text">Trousers</div>
+    </a>
 </div>
 {% endblock content %}
 </body>
