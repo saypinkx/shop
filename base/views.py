@@ -22,6 +22,7 @@ class BaseView(View):
 class LoginView(View):
     def get(self, request):
         return render(request, 'base/login.html')
+
     def post(self, request):
         data = request.POST
         user = authenticate(username=data['email'], password=data['password'])
@@ -29,7 +30,7 @@ class LoginView(View):
             login(request, user)
             return HttpResponseRedirect('/')
         else:
-            return render(request, 'base/login.html', context ={'message': 'Incorrect email or password'})
+            return render(request, 'base/login.html', context={'message': 'Incorrect email or password'})
 
 
 class RegistrationView(View):
@@ -81,7 +82,6 @@ class RegistrationView(View):
             recipient_list=[email]
         )
         return code
-
 
     def create_unregistered_user(self, data, code):
         values_for_update = {"first_name": data['name'], 'last_name': data['surname'], 'password': data['password'],
