@@ -24,7 +24,7 @@ class CatalogModel(models.Model):
     description = models.TextField()
     category = models.CharField(choices=categories)
     size = MultiSelectField(choices=sizes, max_length=20)
-    structure = models.CharField()
+    structure = models.CharField(blank=True)
     def __str__(self):
         return f'{self.name} - {self.category}'
 

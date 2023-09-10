@@ -14,15 +14,29 @@
 {% block content %}
 <br>
 <div class="catalog">
-    <div class="item">
-        <img src="{{ one.url }}" alt="" >
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti nemo, odio sapiente delectus vel accusamus maxime corrupti necessitatibus, unde laboriosam ab a eius eveniet incidunt corporis consectetur aperiam repellendus adipisci!</div>
-    </div>
-    <div class="item">
-        <img src="{{ one.url }}" alt="" >
-    </div>
+    
+        <div class="item"> 
+            
+            <div class="slider-container">
+                <div class="menu">
+                    <label for="slide-dot-1"></label>
+                    <label for="slide-dot-2"></label>
+                    <label for="slide-dot-3"></label>
+                </div>
+              
+                <input id="slide-dot-1" type="radio" name="slides" checked>
+                <div class="slide slide-1" style="background-image: url('{{img.url}}');"></div>
+              
+                <input id="slide-dot-2" type="radio" name="slides" checked>
+                <div class="slide slide-1" style="background-image: url('{{img2.url}}');"></div>
+              
+                <input id="slide-dot-3" type="radio" name="slides" checked>
+                <div class="slide slide-1" style="background-image: url('{{img.url}}');"></div>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur asperiores ipsa eos molestias deserunt pariatur et nam, eligendi quo ratione, sapiente animi beatae? Quos cumque exercitationem, tempore reiciendis ad nam!</p>
+        </div>
+        
 </div>
-
 {% endblock content %}
 </body>
 </html>
