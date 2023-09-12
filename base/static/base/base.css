@@ -14,11 +14,12 @@ svg {
     font-size: 100px;
 }
 svg text {
-	animation: stroke 10s infinite alternate;
+	animation: stroke 5s infinite alternate;
 	stroke-width: 2;
 	stroke: #A00A68;
 	font-size: <ya-tr-span data-index="76-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="180" data-translation="180" data-ch="0" data-type="trSpan">180</ya-tr-span>px;
 }
+
 @keyframes stroke {
 	0%   {
 		fill: rgba(204,3,177,0); stroke: rgba(160,10,104,1);
