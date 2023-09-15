@@ -14,28 +14,25 @@
 {% block content %}
 <br>
 <div class="catalog">
-    
+    {% for product, imgs in catalog %}
         <div class="item"> 
             
             <div class="slider-container">
                 <div class="menu">
-                    <label for="slide-dot-1"></label>
-                    <label for="slide-dot-2"></label>
-                    <label for="slide-dot-3"></label>
+                    {% for img in imgs %}
+                    <label for="slide{{img.id}}"></label>
+                    {% endfor %}
                 </div>
-              
-                <input id="slide-dot-1" type="radio" name="slides" checked>
-                <div class="slide slide-1" style="background-image: url('{{img.url}}');"></div>
-              
-                <input id="slide-dot-2" type="radio" name="slides" checked>
-                <div class="slide slide-1" style="background-image: url('{{img2.url}}');"></div>
-              
-                <input id="slide-dot-3" type="radio" name="slides" checked>
-                <div class="slide slide-1" style="background-image: url('{{img.url}}');"></div>
+                    <div class="slide" style="background-image: url('{{img.image.url}}');"> </div>
+                    {% for img in imgs %}
+                    <input id="slide{{img.id}}" type="radio" name="{{product.name}}" checked>
+                    <div class="slide" style="background-image: url('{{img.image.url}}');"></div>
+                    {% endfor %}
             </div>
+
             <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur asperiores ipsa eos molestias deserunt pariatur et nam, eligendi quo ratione, sapiente animi beatae? Quos cumque exercitationem, tempore reiciendis ad nam!</p>
         </div>
-        
+    {% endfor %}
 </div>
 {% endblock content %}
 </body>

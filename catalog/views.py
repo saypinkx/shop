@@ -13,12 +13,12 @@ class CatalogView(View):
             records_image_model = product.imagemodel_set.all()
             imgs = []
             for record in records_image_model:
-                imgs.append(record.image)
+                imgs.append(record)
             catalog.append((product, imgs))
         data = {
             'catalog': catalog,
-            'img': catalog[0][1][0],
-            'img2': catalog[0][1][1],
         }
 
         return render(request, 'catalog/catalog.html', context=data)
+    def select_products(self):
+
