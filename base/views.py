@@ -63,6 +63,7 @@ class RegistrationView(View):
                 return render(request, 'base/verify.html', context={'message': 'Invalid code'})
             else:
                 registered_user = self.create_registered_user(unregistered_user)
+                unregistered_user.delete()
                 login(request, registered_user)
                 return HttpResponseRedirect('/')
 
@@ -93,5 +94,4 @@ class RegistrationView(View):
                                  first_name=unregistered_user.first_name,
                                  last_name=unregistered_user.last_name)
         registered_user = authenticate(username=unregistered_user.username, password=unregistered_user.password)
-        unregistered_user.delete()
         return registered_user
